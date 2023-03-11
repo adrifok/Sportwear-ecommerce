@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,204 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App{  /*contenedor padre*/
+  max-width: 1550px;
+  width:100% ; /*ocupa todo el ancho */
+  min-height:100vh; /*pantalla tamaño completo para diferentes dispositivos*/
+  margin:0 auto; /*contenedores hijos centrados*/
+  box-shadow: 0 2px 6px #08a05ca4; 
+  padding:0 15px;
+  box-sizing: border-box;
+}
+
+/*Header*/
+ header{
+  width: 97%; 
+  min-height: 100px;/*alto minimo del header*/
+  max-width: 1530px;/*max width menor al contenedor padre*/
+  overflow:hidden;
+  display: flex;
+  justify-content: space-around; /*para q los contenedores hijos se separen*/
+  align-items: center;
+  flex-wrap:wrap;
+  position: fixed;/*para q el header quede posicionado fijamente*/
+  box-sizing: border-box;
+  background-color:white;
+  box-shadow: 0 5px 10px #08a05c50 ;
+ }
+a{
+  color:black;
+  text-decoration:none; /*para borrar la linea inferior*/
+  text-transform:uppercase;
+  }
+  a:hover{
+    color:#08a05c; /*efecto de "start" y "products"*/
+  }
+  li{
+    list-style:none; /*ser quitan los puntos de las viñetas*/
+  }
+
+header ul{
+  display: flex; /*para q los componentes se posicionen de forma horizontal (de fila)*/
+  padding:0;
+  margin:0;
+}
+
+header ul li {/*para q los componentes se separen*/
+  padding:0 1rem;
+}
+
+header ul li a {/*dentro del header*/
+  font-weight:bold;
+}
+
+header .cart{/*posicion del icono cart dentro del header*/
+position:relative;
+cursor: pointer;
+}
+header .cart box-icon{ /*icono del cart*/
+width: 45px;
+height: 45px;
+}
+
+header .cart span {
+position: absolute;
+top:-1rem;
+right: -1.5rem;
+width: 2.5rem;
+height: 2.5rem;
+/*border:1px solid red;*/
+border-radius: 50%;
+display:flex;
+align-items:center;
+justify-content: center;
+color:white;
+padding: 0rem;
+font-size:1.5rem;
+font-weight: 700;
+background-color: crimson;
+}
+
+/*HOME*/
+.start{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 9rem;
+}
+
+.start h1{
+  font-size: 2.5rem;
+  color:#08a05c
+}
+
+.start img{
+  width: 100%;
+  
+}
+
+/*PRODUCTS*/
+.title{
+  font-size: 2.4rem;
+  padding: 10rem 0 0 0;
+  color:#08a05c
+}
+
+.products{
+  padding: 5rem 1rem;
+  margin: 0 auto; /*centrado*/
+  display:grid;/*creo columnas*/
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); /*creo columnas*/
+  gap: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.product{
+  display:flex;
+  width:100%;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 10px 10px 2px rgba(0,0,0,.2);
+  border:6px solid transparent;
+  border: radius 5px;
+}
+
+.product:hover{
+  border: 6px solid #08a05c55;
+}
+
+.product_img img{
+  width: 310px;
+}
+
+.product_footer h1{
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #1a202c;
+  font-family: Helvetica, sans-serif;
+}
+
+.product_footer p{
+  font-weight: 700;
+  color: rgba(0, 0, 0, .555);
+  text-transform: uppercase;
+  font-size: 18px;
+
+}
+
+.product_footer price{
+  font-size: 2rem;
+  color: #1a202c;
+}
+
+.product .button{
+  width: 100%;
+  height: 45px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem 3rem;
+  padding:0 1rem;
+  margin: 1rem;
+}
+.button .btn{
+  border: none;
+  outline:0; /*sin border negro*/
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button button{ /*add to cart button*/
+background-color: #3033d3;
+max-width: 250px;
+width: 100%;
+font-size: 1.5rem;
+color:white;
+font-weight: 600;
+}
+.button div {/*a href*/
+  background-color: #08a05c;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  margin-left: -2rem;
+  border-radius: 5px;
+
+}
+.button div a{
+  color: white;
+  font-weight:700;
+
+}
+ .button div a:hoover{
+  color: white;
+ }
+
+
+/*MEDIA QUERY FOR RESPONSIVE*/
+
+@media only screen and (max-width:600px){/*no aplica a mayor a 600   */
+header ul{
+  display: none;
+}
 }
