@@ -1,22 +1,17 @@
 import React from "react";
-import {
-  //Switch,
-  Route,
-  BrowserRouter as Router,
-  Routes,
-} from "react-router-dom";
-import { Home } from "../Home";
+import  Home  from "../Home/index";
+import { Switch, Route} from "react-router-dom";
 import { ProductsList } from "../Products/index";
+//import {ProductsDetails} from "./"
 
 export const Pages = () => {
   return (
     <section>
-      <Router>
-        <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/products" exact component={ProductsList} />
-        </Routes>
-      </Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/products" exact component={ProductsList} />
+        {/* <Route path="/producto/:id" exact component={ProductsDetails} /> */}
+      </Switch>
     </section>
   );
 };

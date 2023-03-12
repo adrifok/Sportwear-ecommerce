@@ -1,8 +1,9 @@
 import React from "react";
-import {FrontPage} from "../../images/inicio.jpg";
 import{Link} from "react-router-dom";
+import FrontPage from "../../images/inicio.jpg";
 
-export const Home = () => {
+
+export default function Home()  {
   return (
 
     <div className="start">
@@ -16,3 +17,4 @@ export const Home = () => {
     </div>
   )
   };
+  //export default Home;

@@ -1,13 +1,23 @@
-import React from "react";
+import React, {useContext} from "react";
 import Nike from "../../images/Nike.jpg";
 import { Link } from "react-router-dom";
+import { DataContext } from "../../context/DataProvider";
 
 export const Header = () => {
+const value = useContext(DataContext);//llamamos la constante value
+const [menu, setMenu] = value.menu;
+const [cart] = value.cart;
+
+
+const toogleMenu =() =>{//fn q cambia el menu a verdadero o falso
+  setMenu(!menu)
+}  
+
   return (
   
         <header>
        
-          <Link to="#">
+          <Link to="/">
             <div className="logo">
               <img src={Nike} alt="logo" width="150"/>
             </div>
@@ -20,9 +30,9 @@ export const Header = () => {
               <Link to="/products">PRODUCTS</Link>
             </li>
           </ul>
-          <div className="cart">
+          <div className="cart" onClick={toogleMenu}>
             <box-icon name="cart"></box-icon> 
-            <span className="item_total">0</span>
+            <span className="item_total">{cart.length}</span>
           </div>
         </header>
   
