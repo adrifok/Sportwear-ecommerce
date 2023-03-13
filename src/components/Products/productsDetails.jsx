@@ -1,7 +1,7 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react';
 import { DataContext } from "context/DataProvider";
 import { useParams } from "react-router-dom";
-import { productItem } from "./ProductItem";
+import { productItem } from "./ProductItem.jsx";
 
 export const productsdetails = () => {
   const value = useContext(DataContext);
@@ -45,7 +45,7 @@ export const productsdetails = () => {
           <h2>{detail.title}</h2>
           <p className="price">${detail.price}</p>
           <div className="grid">
-          <p className="new"><New></New></p>
+          <p className="new">New</p>
           <div className="size">
             <select placeholder="Size" >
               <option value="1">1</option>
@@ -69,9 +69,13 @@ export const productsdetails = () => {
           }
           <input type="range" min="1" max="36" step="1" value={url} onChange={handleInput} />
           <div className="description">
-          <p><b>description: </b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum necessitatibus soluta alias porro, saepe facere expedita asperiores quos fugit inventore ex, itaque sapiente quae pariatur beatae optio repellat aperiam quia possimus mollitia repellendus? Illo natus quam eaque impedit omnis pariatur!</p>
+          <p><b>description: </b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum necessitatibus soluta alias porro, 
+          saepe facere expedita asperiores quos fugit inventore ex, itaque sapiente quae pariatur beatae optio repellat aperiam quia possimus mollitia 
+          repellendus? Illo natus quam eaque impedit omnis pariatur!</p>
           <br/>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vitae accusantium omnis, facere laudantium ipsa hic reprehenderit blanditiis quibusdam quos repellendus id illo reiciendis magni, aliquid beatae, consequatur sapiente! Sequi facere itaque,</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vitae accusantium omnis, 
+            facere laudantium ipsa hic reprehenderit blanditiis quibusdam quos repellendus id illo reiciendis magni, aliquid beatae, consequatur sapiente! 
+            Sequi facere itaque,</p>
           </div>
           
         </div>

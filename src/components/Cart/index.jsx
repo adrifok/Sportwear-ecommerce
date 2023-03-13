@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Card from "../../images/img08.jpg";
+import Card from "images/img02.jpg";
 import "boxicons";
 import {DataContext} from  "../../context/DataProvider";
 
@@ -60,9 +60,8 @@ const show2 = menu ? "cart show" : "cart";//si menu existe crea una clase carts-
 					{
 					cart.map((product) => (
             <div className="cart_item" key={product.id}>
-              <img src={Card} alt={product.title} />
-              {/* <img src={product.image} alt={product.title} /> */}
-                   {/* <img src={product.image.default} alt={product.title} /> */}
+              {/* <img src={Card} alt={product.title} /> */}
+              <img src={product.image.default} alt={product.title} />
               <div>
                 <h3> {product.title} </h3>
                 <p className="price">${product.price}</p>

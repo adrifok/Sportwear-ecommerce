@@ -1,16 +1,16 @@
 import React from "react";
-import  Home  from "../Home/index";
 import { Switch, Route} from "react-router-dom";
+import  Home  from "../Home/index";
 import { ProductsList } from "../Products/index";
-//import {ProductsDetails} from "./"
+import {ProductsDetails} from "../Products/productsDetails";
 
-export const Pages = () => {
+export default function Pages (){
   return (
     <section>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/products" exact component={ProductsList} />
-        {/* <Route path="/producto/:id" exact component={ProductsDetails} /> */}
+         <Route path="/producto/:id" exact component={ProductsDetails} />
       </Switch>
     </section>
   );
